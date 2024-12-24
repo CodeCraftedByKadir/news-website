@@ -1,0 +1,586 @@
+/* General Reset and Basic Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif, "Roboto";
+}
+
+header,
+h1,
+h2 {
+  font-weight: 700;
+}
+
+p,
+.article-content {
+  font-weight: 400;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 15px 20px;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+/* Logo Styles */
+.logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Navigation Styles */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #ff6f61; /* Highlight color on hover */
+}
+
+/* Main Section */
+main {
+  padding: 20px;
+}
+
+h2,
+h3,
+h4 {
+  color: #333;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+news-section {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.news-section h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.news-grid .article-card {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.article-card,
+.article-preview-card {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.article-card:hover,
+.article-preview-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.article-card img,
+.article-preview-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.article-content,
+.article-preview-content {
+  padding: 15px;
+}
+
+.article-content h3 a,
+.article-preview-content h4 a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.article-content h3 a:hover,
+.article-preview-content h4 a:hover {
+  text-decoration: underline;
+}
+
+.article-content p,
+.article-preview-content p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Styling for Top Stories */
+#top-stories .news-grid .article-card img {
+  width: 100%; /* Ensure it takes full width of the parent container */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 200px; /* Constrain the height so the images are not too large */
+  object-fit: cover; /* Crop the images appropriately */
+  border-radius: 8px; /* Round corners for a nicer appearance */
+}
+
+/* Styling for Recent News Section */
+#recent-news .news-grid .article-preview-card {
+  margin-top: 20px; /* Add space between the cards in this section */
+  padding: 10px; /* Add padding inside each card for a better look */
+}
+
+#recent-news .news-grid .article-preview-card img {
+  width: 100%; /* Make images take the full width */
+  height: auto; /* Ensure images have correct proportions */
+  object-fit: cover; /* Maintain good fit inside cards */
+  border-radius: 8px; /* Round the corners */
+}
+
+/* General Grid Layout */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Use responsive grid */
+  gap: 20px;
+}
+
+#top-stories h2,
+#recent-news h2,
+#related-news h2 {
+  text-align: center; /* Center align the section titles */
+  font-size: 28px;
+  color: #333;
+}
+
+#related-news h2 {
+  margin-top: 50px;
+  /* margin-bottom: 100px; */
+}
+
+/* News Grid Layout */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Styling for Individual Article Cards */
+.article-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  min-height: 400px; /* Ensures cards have enough height to fit both the image and the content */
+  overflow: hidden; /* Prevents overflow if content is larger than expected */
+}
+
+/* Hover Effect on Card */
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for the Images in Article Cards */
+.article-card img {
+  width: 50%;
+  height: auto;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Styling for Text in Article Cards */
+.article-content {
+  flex: 2; /* Allow content to expand */
+  display: flex;
+  flex-direction: column;
+}
+
+.article-content h3 {
+  font-size: 20px;
+  color: #333;
+  /* margin-bottom: 100px; */
+}
+
+.article-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Styling for Top Stories Section */
+#top-stories {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  margin-bottom: 40px;
+}
+
+#top-stories h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Container for Articles - Similar to Recent News */
+.article-preview-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Ensure responsive design */
+  gap: 20px; /* Spacing between article cards */
+}
+
+/* Styling for Individual Article Cards */
+.article-preview-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect on Card */
+.article-preview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for Images in Article Cards */
+.article-preview-card img {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* Ensures consistent image size */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px; /* Space between image and content */
+}
+
+/* Styling for Text in Article Cards */
+.article-preview-content {
+  padding: 10px 0;
+}
+
+.article-preview-content h4 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.article-preview-content p {
+  font-size: 14px; /* Smaller font for description */
+  color: #555;
+  line-height: 1.5; /* Spacing for easier reading */
+}
+
+/* Styling for Top Stories Section */
+#top-stories {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  margin-bottom: 40px;
+}
+
+#top-stories h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Container for Articles - Ensuring all Top Stories articles fit in same grid */
+.article-preview-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* 3 cards per row with responsive resizing */
+  gap: 20px;
+  justify-items: center; /* Center align cards */
+}
+
+/* Styling for Individual Article Cards */
+.article-preview-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect on Card */
+.article-preview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for Images in Article Cards */
+.article-preview-card img {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* Ensures consistent image size */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px; /* Space between image and content */
+}
+
+/* Styling for Text in Article Cards */
+.article-preview-content {
+  padding: 10px 0;
+}
+
+.article-preview-content h4 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.article-preview-content p {
+  font-size: 14px; /* Smaller font for description */
+  color: #555;
+  line-height: 1.5; /* Spacing for easier reading */
+}
+
+/* Upload News Section Styling */
+.upload-news {
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.upload-news h2 {
+  text-align: center;
+  color: #2980b9;
+  font-size: 2rem;
+}
+
+.upload-news label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.upload-news input,
+.upload-news textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.upload-news textarea {
+  resize: vertical;
+}
+
+.upload-news button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #2980b9;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-news button:hover {
+  background-color: #1d6d94;
+}
+
+.comment-section {
+  margin-top: 30px;
+}
+
+.comment-title {
+  font-size: 1.8rem;
+  color: #34495e;
+}
+
+.comment-list {
+  margin-top: 20px;
+}
+
+.comment {
+  padding: 10px;
+  margin: 15px 0;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment .author {
+  font-weight: bold;
+  color: #2980b9;
+}
+
+.comment .text {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.comment-form {
+  margin-top: 40px;
+  padding: 15px;
+  background-color: #ecf0f1;
+  border-radius: 8px;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bdc3c7;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.comment-form button {
+  background: #2980b9;
+  padding: 12px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  background: #1a5276;
+}
+
+.social-share {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-share button {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.social-share button:hover {
+  background-color: #1a5276;
+}
+
+.social-share i {
+  margin-right: 10px;
+}
+
+.newsletter {
+  text-align: center;
+  margin: 50px 0;
+  background: #ecf0f1;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.newsletter h2 {
+  font-size: 2rem;
+  color: #34495e;
+}
+
+.newsletter p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.newsletter input {
+  padding: 12px;
+  font-size: 1.1rem;
+  width: 60%;
+  border-radius: 8px;
+}
+
+.newsletter button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background: #1a5276;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .article-card {
+    width: 100%;
+  }
+
+  .other-articles {
+    grid-template-columns: 1fr;
+  }
+}

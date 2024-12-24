@@ -1,0 +1,204 @@
+/* Base styles for large screens (desktop) */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background: #2c3e50;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.8rem;
+}
+
+.article {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.article h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.article img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.article p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.related-articles {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f3f3f3;
+  border-radius: 8px;
+}
+
+.related-articles h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.related-card {
+  margin: 10px 0;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.related-card h4 {
+  margin: 0;
+}
+
+.related-card h4 a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.related-card h4 a:hover {
+  text-decoration: underline;
+  color: #1a5276;
+}
+
+/* Search bar styling */
+
+.search-bar {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 10px;
+  display: flex;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input[type="text"] {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  background: #2980b9;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #1a5276;
+}
+
+.home-button {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.home-button a {
+  display: inline-block;
+  background: #2980b9;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    background 0.3s,
+    transform 0.3s;
+}
+
+.home-button a:hover {
+  background: #1a5276;
+  transform: scale(1.05);
+}
+
+/* Media Query for smaller screens (tablets and below) */
+@media (max-width: 1024px) {
+  .article {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  header a {
+    font-size: 1.6rem;
+  }
+
+  .article h1 {
+    font-size: 2rem;
+  }
+
+  .related-articles {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  .search-bar {
+    width: 90%;
+    max-width: 100%;
+    padding: 8px;
+  }
+}
+
+/* Media Query for mobile (phones) */
+@media (max-width: 600px) {
+  .article img {
+    width: 100%;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  .article {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .related-articles h2 {
+    font-size: 1.4rem;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  header a {
+    font-size: 1.4rem;
+  }
+
+  .home-button a {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}

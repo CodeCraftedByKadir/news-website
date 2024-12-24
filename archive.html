@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archive</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      .archive-section {
+        padding: 50px 20px;
+      }
+      .archive-section h1 {
+        color: #ff6f61;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .search-bar {
+        max-width: 600px;
+        margin: 0 auto 30px;
+        display: flex;
+      }
+      .search-bar input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+      }
+      .search-bar button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #ff6f61;
+        color: #fff;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .search-bar button:hover {
+        background-color: #e5594f;
+      }
+      .archive-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+      .archive-card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .archive-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+      .archive-card .archive-content {
+        padding: 15px;
+      }
+      .archive-card .archive-content h3 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .archive-card .archive-content h3 a {
+        text-decoration: none;
+        color: #333;
+        transition: color 0.3s;
+      }
+      .archive-card .archive-content h3 a:hover {
+        color: #ff6f61;
+      }
+      .archive-card .archive-content p {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 10px;
+      }
+      .archive-card .archive-content .archive-date {
+        font-size: 12px;
+        color: #999;
+      }
+
+      .home-button {
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .home-button a {
+        display: inline-block;
+        background: #2980b9;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition:
+          background 0.3s,
+          transform 0.3s;
+      }
+
+      .home-button a:hover {
+        background: #1a5276;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Archive</h1>
+    </header>
+
+    <section class="archive-section">
+      <h1>Explore Our Past Articles</h1>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search articles..." />
+        <button id="searchBtn">Search</button>
+      </div>
+
+      <!-- Article Grid -->
+      <div class="archive-grid" id="archiveGrid">
+        <!-- Archive Article 1 -->
+        <div class="archive-card">
+          <img src="img/archive-1.jpg" alt="Article 1" />
+          <div class="archive-content">
+            <h3><a href="#">The Evolution of Electric Cars</a></h3>
+            <p>Electric vehicles are shaping the future of transportation...</p>
+            <span class="archive-date">Published: May 12, 2024</span>
+          </div>
+        </div>
+
+        <!-- Archive Article 2 -->
+        <div class="archive-card">
+          <img src="img/archive-2.jpg" alt="Article 2" />
+          <div class="archive-content">
+            <h3><a href="#">New Discoveries in Space Exploration</a></h3>
+            <p>Scientists are uncovering new mysteries in our galaxy...</p>
+            <span class="archive-date">Published: April 8, 2024</span>
+          </div>
+        </div>
+
+        <!-- Archive Article 3 -->
+        <div class="archive-card">
+          <img src="img/archive-3.jpg" alt="Article 3" />
+          <div class="archive-content">
+            <h3><a href="#">Understanding Mental Health Challenges</a></h3>
+            <p>
+              Mental health is gaining global attention. Here's what you should
+              know...
+            </p>
+            <span class="archive-date">Published: March 25, 2024</span>
+          </div>
+        </div>
+
+        <!-- Archive Article 4 -->
+        <div class="archive-card">
+          <img src="img/archive-4.jpg" alt="Article 4" />
+          <div class="archive-content">
+            <h3><a href="#">The Impact of Climate Policies</a></h3>
+            <p>Climate policies are transforming industries worldwide...</p>
+            <span class="archive-date">Published: March 10, 2024</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="home-button">
+      <a href="index.html">Back to Home</a>
+    </div>
+
+    <script>
+      const searchInput = document.getElementById("searchInput");
+      const searchBtn = document.getElementById("searchBtn");
+      const archiveGrid = document.getElementById("archiveGrid");
+
+      // Search Functionality
+      searchBtn.addEventListener("click", () => {
+        const query = searchInput.value.toLowerCase();
+        const articles = archiveGrid.querySelectorAll(".archive-card");
+
+        articles.forEach((article) => {
+          const title = article.querySelector("h3 a").textContent.toLowerCase();
+          const description = article
+            .querySelector("p")
+            .textContent.toLowerCase();
+
+          if (title.includes(query) || description.includes(query)) {
+            article.style.display = "block";
+          } else {
+            article.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

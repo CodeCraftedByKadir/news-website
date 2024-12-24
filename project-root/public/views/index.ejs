@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1><%= message %></h1>
+    </header>
+    <main>
+      <section class="content">
+        <h2>Featured Articles</h2>
+        <p>Content will go here...</p>
+      </section>
+    </main>
+
+    <script>
+      fetch("/articles")
+        .then((response) => response.json())
+        .then((data) => {
+          // Dynamically render articles in HTML
+          const articlesContainer =
+            document.getElementById("articles-container");
+          data.forEach((article) => {
+            const articleHTML = `
+            <div class="article">
+              <h1>${article.title}</h1>
+              <p>${article.content}</p>
+              <img src="${article.image}" alt="Image for ${article.title}">
+            </div>
+          `;
+            articlesContainer.innerHTML += articleHTML;
+          });
+        });
+    </script>
+  </body>
+</html>

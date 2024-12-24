@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Website</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="logo">
+        <a href="index.html"><img src="img/logo.jpg" alt="Website Logo" /></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#top-stories">Top Stories</a></li>
+          <li><a href="#recent-news">Recent News</a></li>
+          <li><a href="#related-news">Related News</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="archive.html">Archive</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="social-share">
+      <button
+        onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + window.location.href)"
+      >
+        <i class="fab fa-facebook-f"></i> Share on Facebook
+      </button>
+      <button
+        onclick="window.open('https://twitter.com/intent/tweet?url=' + window.location.href)"
+      >
+        <i class="fab fa-twitter"></i> Share on Twitter
+      </button>
+      <button
+        onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + window.location.href)"
+      >
+        <i class="fab fa-linkedin-in"></i> Share on LinkedIn
+      </button>
+    </div>
+
+    <!-- Main Section -->
+    <main>
+      <!-- Upload News Form -->
+      <section class="upload-news">
+        <h2>Upload News</h2>
+        <form
+          id="news-upload-form"
+          action="upload_news.php"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <label for="article-title">Article Title</label>
+          <input
+            type="text"
+            id="article-title"
+            name="article-title"
+            placeholder="Enter the article title"
+            required
+          />
+
+          <label for="article-content">Article Content</label>
+          <textarea
+            id="article-content"
+            name="article-content"
+            rows="6"
+            placeholder="Write the article content"
+            required
+          ></textarea>
+
+          <label for="article-image">Upload Image</label>
+          <input
+            type="file"
+            id="article-image"
+            name="article-image"
+            accept="image/*"
+            required
+          />
+
+          <button type="submit" class="upload-btn">Upload Article</button>
+        </form>
+      </section>
+
+      <!-- Top Stories Section -->
+      <section id="top-stories">
+        <h2>Top Stories</h2>
+        <div class="article-preview-container">
+          <!-- Article Card 1 -->
+          <div class="article-preview-card">
+            <img src="img/featured-1.jpg" alt="Featured Story" />
+            <div class="article-preview-content">
+              <h4>
+                <a href="top.stories-1.html"
+                  >The Future of Artificial Intelligence: What to Expect</a
+                >
+              </h4>
+              <p>
+                Artificial intelligence has made massive advancements in recent
+                years. From self-driving cars to AI-created art, it’s clear that
+                AI is becoming more deeply integrated into our daily lives. But
+                what’s next? Here’s a glimpse into the future of AI.
+              </p>
+            </div>
+          </div>
+
+          <!-- Article Card 2 -->
+          <div class="article-preview-card">
+            <img src="img/featured-2.jpg" alt="Featured Story 2" />
+            <div class="article-preview-content">
+              <h4>
+                <a href="top.stories-2.html"
+                  >Breakthrough Cancer Treatment: A New Era of Hope</a
+                >
+              </h4>
+              <p>
+                Doctors have recently made a breakthrough in cancer treatment.
+                The new approach, focusing on personalized immunotherapy, is
+                showing promising results in clinical trials. Could this be the
+                key to curing cancer once and for all?
+              </p>
+            </div>
+          </div>
+
+          <!-- Article Card 3 -->
+          <div class="article-preview-card">
+            <img src="img/featured-3.jpg" alt="Featured Story 3" />
+            <div class="article-preview-content">
+              <h4>
+                <a href="top.stories-3.html"
+                  >Global Economic Outlook: Navigating a Shifting Landscape</a
+                >
+              </h4>
+              <p>
+                Experts predict challenging economic times ahead. As inflation
+                rises and global markets become more volatile, what strategies
+                should investors and governments adopt to navigate the shifting
+                economic landscape?
+              </p>
+            </div>
+          </div>
+
+          <!-- Article Card 4 -->
+          <div class="article-preview-card">
+            <img src="img/featured-4.jpg" alt="Featured Story 4" />
+            <div class="article-preview-content">
+              <h4>
+                <a href="top.stories-4.html"
+                  >The Future of Renewable Energy: Innovations and Challenges</a
+                >
+              </h4>
+              <p>
+                Renewable energy sources are gaining popularity, but what are
+                the key innovations and challenges facing this industry? In this
+                article, we explore advancements in solar, wind, and geothermal
+                energy, and the roadblocks that still need to be addressed.
+              </p>
+            </div>
+          </div>
+
+          <!-- Article Card 5 -->
+          <div class="article-preview-card">
+            <img src="img/featured-5.jpg" alt="Featured Story 5" />
+            <div class="article-preview-content">
+              <h4>
+                <a href="#"
+                  >The Power of Space Exploration: Unlocking Human Potential</a
+                >
+              </h4>
+              <p>
+                Space exploration continues to reveal new opportunities for
+                human progress. With missions to Mars and beyond, scientists are
+                making breakthroughs in technology, science, and understanding
+                the universe. What’s next on the horizon?
+              </p>
+            </div>
+          </div>
+
+          <!-- Article Card 6 -->
+          <div class="article-preview-card">
+            <img src="img/featured-6.jpg" alt="Featured Story 6" />
+            <div class="article-preview-content">
+              <h4>
+                <a href="#">Cybersecurity: Safeguarding the Digital Age</a>
+              </h4>
+              <p>
+                As our lives move further into the digital world, cybersecurity
+                has become more crucial than ever. This article explores the
+                current state of cybersecurity, the most significant threats,
+                and how businesses and individuals can protect themselves in a
+                digital-first world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent News Section -->
+      <section id="recent-news" class="news-section">
+        <h2>Recent News</h2>
+        <div class="news-grid">
+          <div class="article-preview-card">
+            <img src="img/article-1.jpg" alt="Article 1" />
+            <div class="article-preview-content">
+              <h4>
+                <a href="remote-work.html"
+                  >The Rise of Remote Work: A Shift in Global Trends</a
+                >
+              </h4>
+              <p>
+                The rise of remote work has shifted the balance between work and
+                life. What does this mean for future business practices and
+                employee productivity? Let’s explore the lasting effects of the
+                global remote work revolution.
+              </p>
+            </div>
+          </div>
+
+          <div class="article-preview-card">
+            <img src="img/article-2.jpg" alt="Article 2" />
+            <div class="article-preview-content">
+              <h4>
+                <a href="climate-change.html"
+                  >Climate Change and Its Effects on Global Agriculture</a
+                >
+              </h4>
+              <p>
+                Climate change is already impacting crop yields and weather
+                patterns around the world. Experts believe this could lead to
+                major shifts in global food security. What actions can we take
+                now to ensure a stable future?
+              </p>
+            </div>
+          </div>
+
+          <div class="article-preview-card">
+            <img src="img/article-3.jpg" alt="Article 3" />
+            <div class="article-preview-content">
+              <h4>
+                <a href="plastic-crisis.html"
+                  >A Global Effort: How Countries Are Tackling the Plastic
+                  Crisis</a
+                >
+              </h4>
+              <p>
+                Plastic pollution is one of the biggest environmental challenges
+                of our time. Here’s how countries are implementing measures like
+                plastic bans and recycling programs to combat the crisis on a
+                global scale.
+              </p>
+            </div>
+          </div>
+
+          <div class="article-preview-card">
+            <img src="img/article-4.jpg" alt="Article 4" />
+            <div class="article-preview-content">
+              <h4>
+                <a href="mars-colonization.html"
+                  >Space Exploration: How Close Are We to Colonizing Mars?</a
+                >
+              </h4>
+              <p>
+                NASA and SpaceX are pushing boundaries with plans to reach Mars
+                in the coming decades. But what challenges lie ahead in
+                colonizing the Red Planet? Here’s a look at the major hurdles
+                and achievements we can expect in the next few years.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related News Section -->
+      <section id="related-news">
+        <h2>Related News</h2>
+        <div class="news-grid">
+          <div class="article-preview-card">
+            <img src="img/related-1.jpg" alt="Related Article 1" />
+            <div class="article-preview-content">
+              <h4>
+                <a href="#">The Evolution of Electric Vehicles: What's Next?</a>
+              </h4>
+              <p>
+                Electric vehicles are revolutionizing the way we think about
+                transportation. But as the industry grows, new technologies and
+                challenges emerge. Here’s what’s driving the evolution.
+              </p>
+            </div>
+          </div>
+
+          <div class="article-preview-card">
+            <img src="img/related-2.jpg" alt="Related Article 2" />
+            <div class="article-preview-content">
+              <h4>
+                <a href="#"
+                  >The Growing Popularity of Renewable Energy Sources</a
+                >
+              </h4>
+              <p>
+                Solar, wind, and other renewable energy sources are gaining
+                traction globally. What factors are accelerating this growth,
+                and what does it mean for our future energy supply?
+              </p>
+            </div>
+          </div>
+
+          <div class="article-preview-card">
+            <img src="img/related-3.jpg" alt="Related Article 3" />
+            <div class="article-preview-content">
+              <h4>
+                <a href="#"
+                  >Virtual Reality in Entertainment: The Future of Immersion</a
+                >
+              </h4>
+              <p>
+                From VR gaming to immersive movies, virtual reality is changing
+                how we experience entertainment. What trends and technologies
+                are paving the way?
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <h2>Stay Updated</h2>
+        <p>
+          Subscribe to our newsletter to get the latest updates on news,
+          articles, and trends.
+        </p>
+        <input type="email" placeholder="Enter your email" required />
+        <button>Subscribe</button>
+      </section>
+
+      <section class="comment-section">
+        <h2 class="comment-title">Comments</h2>
+
+        <div class="comment-list">
+          <!-- Example comment -->
+          <div class="comment">
+            <p class="author">John Doe</p>
+            <p class="text">
+              This is a very informative article. Thanks for the insights!
+            </p>
+          </div>
+          <div class="comment">
+            <p class="author">Jane Smith</p>
+            <p class="text">
+              Great read! I agree with your point about technology trends.
+            </p>
+          </div>
+        </div>
+
+        <!-- Comment Form -->
+        <div class="comment-form">
+          <h3>Leave a comment</h3>
+          <input
+            type="text"
+            id="comment-name"
+            placeholder="Your name"
+            required
+          />
+          <textarea
+            id="comment-text"
+            rows="5"
+            placeholder="Your comment"
+            required
+          ></textarea>
+          <button id="submit-comment">Submit</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2024 News Website</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
